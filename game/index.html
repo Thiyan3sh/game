@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GAME</title>
+        <link rel="icon" href="gameee3.JPG">
+    </head>
+    <body bgcolor="black" style="color:white">
+<center>
+    <img src="gameee1.JPG">
+    <h1>Guess The Number</h1>
+<input id="guess">
+<button onclick="check()">check</button>
+<p id="result">you are wrong/right</p>
+<p id="attemp">Attempts:</p>
+<p id="score">Score:10</p>
+
+<img src="gamee2.JPG">
+<p> Enjoy the game </p>
+</center>
+</body>
+
+<script>
+    //selecting input
+    var guessnum=document.getElementById("guess")
+    var result=document.getElementById("result")
+    var score=document.getElementById("score")
+     var randnum=Math.floor(Math.random()*10)+1
+     var attemp=document.getElementById("attemp")
+     var totscore=10
+     var attempt=0
+    function check()
+    {
+        attempt=attempt+1
+        attemp.textContent="Attempts:"+attempt
+        var entnum=guessnum.value
+        if(randnum==entnum)
+        {
+            console.log("Right")
+            result.textContent="Right"
+            alert("YOU WON")
+            totscore=totscore+1
+            score.textContent="score:"+totscore
+
+        }
+        else{
+            totscore=totscore-1
+            console.log("Wrong")
+            score.textContent="score:"+totscore
+            result.textContent="wrong"
+        }
+    }
+    </script>
+    </html>
